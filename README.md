@@ -1,10 +1,8 @@
-$.breakpoint
-==========
+# $.breakpoint
 
-Easily manage media queries in your jQuery javascripts!
+A simple way to use media queries in your jQuery javascripts!
 
-The structure of a breakpoint
------------------------------
+## The structure of a breakpoint
 
 A breakpoint is a javascript object consisting of **four** methods: `condition`, `first_enter`, `enter` and `exit`.
 
@@ -42,8 +40,9 @@ Whenever the condition returns true, be it on page load or when the viewport cha
 	});
 ```
 
-Tips and tricks
----------------
+## Tips and tricks
+
+### Self invoking anonymous function
 
 It's generally a good idea to use a self invoking anonymous function to return the breakpoint object. This way, you can define private variables which can be used in all your breakpoint methods.
 
@@ -70,3 +69,7 @@ It's generally a good idea to use a self invoking anonymous function to return t
 		}
 	}()));
 ```
+
+###MatchMedia support in older browsers
+
+To use media queries via `window.matchMedia` in older browser you can use something like, for example, [Paul Irish's matchMedia() polyfill](https://github.com/paulirish/matchMedia.js).
