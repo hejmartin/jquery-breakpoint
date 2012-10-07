@@ -42,9 +42,9 @@ Whenever the condition returns true, be it on page load or when the viewport cha
 
 ## Tips and tricks
 
-###MatchMedia support in older browsers
+### MatchMedia support in older browsers
 
-To use media queries via `window.matchMedia` in older browser you can use something like, for example, [Paul Irish's matchMedia() polyfill](https://github.com/paulirish/matchMedia.js).
+To use media queries via `window.matchMedia` in older browser you can use something like [Paul Irish's matchMedia() polyfill](https://github.com/paulirish/matchMedia.js). If you're using [Modernizr](http://modernizr.com/download/#-touch-mq-teststyles-prefixes), the same polyfill can be included by checking the *Media queries* checkbox in the *Extra* section.
 
 ### Self invoking anonymous function
 
