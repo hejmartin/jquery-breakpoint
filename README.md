@@ -22,7 +22,9 @@ Whenever the condition returns true, be it on page load or when the viewport cha
 
 ```javascript
 	$.breakpoint({
-		condition: function () {…},
+		condition: function () {
+			return window.matchMedia('only screen and (min-width:500px)').matches;
+		},
 		first_enter: function () {
 			// Code will run the first time condition() is true.
 			// Here, you might wanna create elements to use in
@@ -50,7 +52,9 @@ It's generally a good idea to use a self invoking anonymous function to return t
 		var element;
 
 		return {
-			condition: function () {…},
+			condition: function () {
+				return window.matchMedia('only screen and (min-width:500px)').matches;
+			},
 			first_enter: function () {
 				// Create element.
 				element = $('<a>');
