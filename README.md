@@ -22,12 +22,17 @@ Whenever the condition returns true, be it on page load or when the viewport cha
 		condition: function () {…},
 		first_enter: function () {
 			// Code will run the first time condition() is true.
+			// Here, you might wanna create elements to use in
+			// your enter and exit methods.
 		},
 		enter: function () {
 			// Code will run whenever condition() becomes true.
 		},
 		exit: function () {
-			// Code will run whenever condition() becomes false (if it was previously true).
+			// Code will run whenever condition() becomes false
+			// (if it was previously true).
+			// This is where you revert the things you do in the
+			// enter method.
 		}
 	});
 
