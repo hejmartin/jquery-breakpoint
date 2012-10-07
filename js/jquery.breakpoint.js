@@ -75,12 +75,12 @@
 	// Loop through all breakpoints and determine which ones are active.
 	function checkAllBreakpoints() {
 		// Build temporary array of active breakpoints
-		var active_breakpoints = $.grep(breakpoints, function (breakpoint, index) {
+		var active_breakpoints = $.grep(breakpoints, function (breakpoint) {
 			return breakpoint.is_active;
 		});
 
 		// Build temporary array of inactive breakpoints.
-		var inactive_breakpoints = $.grep(breakpoints, function (breakpoint, index) {
+		var inactive_breakpoints = $.grep(breakpoints, function (breakpoint) {
 			return !breakpoint.is_active;
 		});
 

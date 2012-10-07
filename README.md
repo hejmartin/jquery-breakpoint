@@ -4,9 +4,9 @@ A simple way to use media queries in your jQuery javascripts!
 
 ## The structure of a breakpoint
 
-A breakpoint is a javascript object consisting of **four** methods: `condition`, `first_enter`, `enter` and `exit`.
+A breakpoint, in this case, is a javascript object consisting of **four** methods: `condition`, `first_enter`, `enter` and `exit`.
 
-`condition()` should return `true` when the breakpoint should be activated and `false` when it should be deactivated. Most likely, you will use a media query as your condition, but this is not by any means required by the breakpoint plugin.
+`condition()` should return `true` when the breakpoint should be activated and `false` when it should be deactivated. Most likely, you'll want to use a media query as your condition, but this is not by any means required by the breakpoint plugin.
 
 ```javascript
 	$.breakpoint({
@@ -16,7 +16,7 @@ A breakpoint is a javascript object consisting of **four** methods: `condition`,
 	});
 ```
 
-Whenever the condition returns true, be it on page load or when the viewport changes, the `enter` method is executed. The first time this happens, the optional `first_enter` method will execute. When condition becomes false, the `exit` method will execute. Be aware however that the `exit` method will only run provided that the condition previously has been true!
+Whenever the condition returns true, be it on page load or when the viewport changes, the `enter` method is executed. The first time this happens, the optional `first_enter` method will execute before the `enter` method. When condition becomes false, the `exit` method will execute. Be aware however that the `exit` method will only run provided that the condition previously has been true!
 
 ```javascript
 	$.breakpoint({
@@ -25,7 +25,7 @@ Whenever the condition returns true, be it on page load or when the viewport cha
 		},
 		first_enter: function () {
 			// Code will run the first time condition() is true.
-			// Here, you might wanna create elements to use in
+			// Here, you might create elements to use in
 			// your enter and exit methods.
 		},
 		enter: function () {
@@ -41,6 +41,10 @@ Whenever the condition returns true, be it on page load or when the viewport cha
 ```
 
 ## Tips and tricks
+
+###MatchMedia support in older browsers
+
+To use media queries via `window.matchMedia` in older browser you can use something like, for example, [Paul Irish's matchMedia() polyfill](https://github.com/paulirish/matchMedia.js).
 
 ### Self invoking anonymous function
 
@@ -69,7 +73,3 @@ It's generally a good idea to use a self invoking anonymous function to return t
 		}
 	}()));
 ```
-
-###MatchMedia support in older browsers
-
-To use media queries via `window.matchMedia` in older browser you can use something like, for example, [Paul Irish's matchMedia() polyfill](https://github.com/paulirish/matchMedia.js).
