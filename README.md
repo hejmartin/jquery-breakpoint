@@ -10,14 +10,17 @@ A breakpoint is a javascript object consisting of **four** methods: `condition`,
 
 `condition()` should return `true` when the breakpoint should be activated and `false` when it should be deactivated. Most likely, you will use a media query as your condition, but this is not by any means required by the breakpoint plugin.
 
+```javascript
 	$.breakpoint({
 		condition: function () {
 			return window.matchMedia('only screen and (min-width:500px)').matches;
 		}
 	});
+```
 
 Whenever the condition returns true, be it on page load or when the viewport changes, the `enter` method is executed. The first time this happens, the optional `first_enter` method will execute. When condition becomes false, the `exit` method will execute. Be aware however that the `exit` method will only run provided that the condition previously has been true!
 
+```javascript
 	$.breakpoint({
 		condition: function () {…},
 		first_enter: function () {
@@ -35,12 +38,14 @@ Whenever the condition returns true, be it on page load or when the viewport cha
 			// enter method.
 		}
 	});
+```
 
 Tips and tricks
 ---------------
 
 It's generally a good idea to use a self invoking anonymous function to return the breakpoint object. This way, you can define private variables which can be used in all your breakpoint methods.
 
+```javascript
 	$.breakpoint((function () {
 		var element;
 
@@ -60,3 +65,4 @@ It's generally a good idea to use a self invoking anonymous function to return t
 			}
 		}
 	}()));
+```
