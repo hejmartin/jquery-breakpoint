@@ -1,0 +1,18 @@
+<snippet>
+	<content><![CDATA[
+$.breakpoint((function () {
+	${3:}
+	// Return the breakpoint object
+	return {
+		condition: function () {
+			return window.matchMedia('${1:only screen and (${2:max-width:781px})}').matches;
+		},
+		first_enter: function () {},
+		enter: function () {},
+		exit: function () {}
+	};
+}()));
+]]></content>
+	<tabTrigger>breakpoint</tabTrigger>
+	<scope>source.js</scope>
+</snippet>
