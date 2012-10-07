@@ -8,7 +8,7 @@ The structure of a breakpoint
 
 A breakpoint is a javascript object consisting of **four** methods: `condition`, `first_enter`, `enter` and `exit`.
 
-`condition` should return `true` when the breakpoint should be activated and `false` when it should be *de*activated. Most likely, you will use a media query as your condition, but this is not by any means required by the breakpoint plugin.
+`condition()` should return `true` when the breakpoint should be activated and `false` when it should be *de*activated. Most likely, you will use a media query as your condition, but this is not by any means required by the breakpoint plugin.
 
 	$.breakpoint({
 		condition: function () {
