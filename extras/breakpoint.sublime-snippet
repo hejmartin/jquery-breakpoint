@@ -1,6 +1,6 @@
 <snippet>
 	<content><![CDATA[
-$.breakpoint((function () {
+\$.breakpoint((function () {
 	${3:}
 	// Return the breakpoint object
 	return {
