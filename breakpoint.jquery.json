@@ -1,6 +1,6 @@
 {
 	"name": "breakpoint",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"title": "jQuery Breakpoint",
 	"author": {
 		"name" : "Martin Jansson",
@@ -20,7 +20,9 @@
 	"keywords": [
 		"breakpoint",
 		"breakpoints",
-		"responsive"
+		"responsive",
+		"rwd",
+		"mediaqueries"
 	],
 	"homepage": "https://github.com/martinmartinmartin/breakpoint/",
 	"docs": "https://github.com/martinmartinmartin/breakpoint/"
