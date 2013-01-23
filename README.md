@@ -1,4 +1,4 @@
-# $.breakpoint
+# jQuery Breakpoint
 
 A simple way to use media queries in your jQuery javascripts!
 

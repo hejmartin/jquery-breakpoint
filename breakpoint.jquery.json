@@ -1,0 +1,30 @@
+{
+	"name": "breakpoint",
+	"version": "1.0.0",
+	"title": "jQuery Breakpoint",
+	"author": {
+		"name" : "Martin Jansson",
+		"email" : "martin@marja.se",
+		"url" : "http://twitter.com/martinjansson"
+	},
+	"licenses": [
+		{
+			"type": "GPLv3",
+			"url": "http://opensource.org/licenses/gpl-3.0.html"
+		}
+	],
+	"dependencies": {
+		"jquery": ">=1.7"
+	},
+	"description": "A simple way to use media queries in your jQuery javascripts!",
+	"keywords": [
+		"breakpoint",
+		"breakpoints",
+		"responsive",
+		"responsive design",
+		"media query",
+		"media queries"
+	],
+	"homepage": "https://github.com/martinmartinmartin/breakpoint/",
+	"docs": "https://github.com/martinmartinmartin/breakpoint/"
+}
