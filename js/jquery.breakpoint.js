@@ -37,7 +37,9 @@
 
 			// We have left this breakpoint.
 			if (typeof breakpoint.exit === 'function') {
-				breakpoint.exit();
+				try {
+					breakpoint.exit();
+				} catch (e) {}
 			}
 
 			breakpoint.is_active = false;
@@ -49,14 +51,18 @@
 
 			// We have entered this breakpoint.
 			if (typeof breakpoint.first_enter === 'function') {
-				breakpoint.first_enter();
+				try {
+					breakpoint.first_enter();
+				} catch (e) {}
 
 				// As this function is only meant to run once, remove it now.
 				delete breakpoint.first_enter;
 			}
 
 			if (typeof breakpoint.enter === 'function') {
-				breakpoint.enter();
+				try {
+					breakpoint.enter();
+				} catch (e) {}
 			}
 
 			breakpoint.is_active = true;
