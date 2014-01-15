@@ -29,6 +29,11 @@
 	// Array of all added breakpoints.
 	$.breakpoint.breakpoints = breakpoints;
 
+	// Allow checking a single breakpoint from outside of plugin.
+	$.breakpoint.check = function (breakpoint) {
+		checkSingleBreakpoint(breakpoint);
+	};
+
 	// Default options.
 	$.breakpoint.defaults = { /* none yet… */};
 
@@ -38,7 +43,7 @@
 			// We have left this breakpoint.
 			if (typeof breakpoint.exit === 'function') {
 				try {
-					breakpoint.exit();
+					breakpoint.exit.apply(breakpoint);
 				} catch (e) {}
 			}
 
@@ -52,7 +57,7 @@
 			// We have entered this breakpoint.
 			if (typeof breakpoint.first_enter === 'function') {
 				try {
-					breakpoint.first_enter();
+					breakpoint.first_enter.apply(breakpoint);
 				} catch (e) {}
 
 				// As this function is only meant to run once, remove it now.
@@ -61,7 +66,7 @@
 
 			if (typeof breakpoint.enter === 'function') {
 				try {
-					breakpoint.enter();
+					breakpoint.enter.apply(breakpoint);
 				} catch (e) {}
 			}
 
