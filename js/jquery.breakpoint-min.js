@@ -1,4 +1,6 @@
-!function(t){"use strict"
-function n(t){if(!t.condition()){if("function"==typeof t.exit)try{t.exit.apply(t)}catch(n){}t.is_active=!1}}function i(t){if(t.condition()){if("function"==typeof t.first_enter){try{t.first_enter.apply(t)}catch(n){}delete t.first_enter}if("function"==typeof t.enter)try{t.enter.apply(t)}catch(n){}t.is_active=!0}}function e(t){t.is_active?n(t):i(t)}function c(){var e=t.grep(o,function(t){return t.is_active}),c=t.grep(o,function(t){return!t.is_active})
-t.each(e,function(t,i){n(i)}),t.each(c,function(t,n){i(n)})}var o=[]
-t.breakpoint=function(n,i){i=t.extend(!0,{},t.breakpoint.defaults,i),o.push(n),1===o.length&&t(window).on("resize orientationchange",function(){c()}),e(n)},t.breakpoint.breakpoints=o,t.breakpoint.check=function(t){e(t)},t.breakpoint.defaults={}}(jQuery)
+!function(n){"use strict"
+function t(n){if(!n.condition()){if(c("Exiting breakpoint: "+n),"function"==typeof n.exit)try{n.exit.apply(n)}catch(t){}n.is_active=!1}}function i(n){if(n.condition()){if("function"==typeof n.first_enter){c("Entering breakpoint for the first time: "+n)
+try{n.first_enter.apply(n)}catch(t){}delete n.first_enter}if("function"==typeof n.enter){c("Entering breakpoint: "+n)
+try{n.enter.apply(n)}catch(t){}}n.is_active=!0}}function e(n){n.is_active?t(n):i(n)}function o(){var e=n.grep(r,function(n){return n.is_active}),o=n.grep(r,function(n){return!n.is_active})
+n.each(e,function(n,i){t(i)}),n.each(o,function(n,t){i(t)})}function c(){n.breakpoint.debug&&console&&console.info&&console.info.apply(console,arguments)}var r=[]
+n.breakpoint=function(t,i){i=n.extend(!0,{},n.breakpoint.defaults,i),r.push(t),1===r.length&&n(window).on("resize orientationchange",function(){o()}),e(t)},n.breakpoint.breakpoints=r,n.breakpoint.check=function(n){e(n)},n.breakpoint.defaults={},n.breakpoint.debug=!0}(jQuery)
