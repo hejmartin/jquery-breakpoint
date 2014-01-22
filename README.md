@@ -42,7 +42,7 @@ Whenever the condition returns true, be it on page load or when the viewport cha
 
 ## Debugging
 
-The plugin provides some basic debugging which you can activate by setting `$.breakpoint.debug = true`. This will cause the plugin to log information to the browser console whenever a breakpoint is entered or exited. Add a `toString` method to your breakpoint object to distinguish between breakpoints; otherwise you'll se `[object Object]` as the name of the breakpoint.
+The plugin provides some basic debugging which you can activate by setting `$.breakpoint.debug = true`. This will cause the plugin to log information to the browser console whenever a breakpoint is entered or exited. Add a `toString` method to your breakpoint object to distinguish between breakpoints; otherwise you'll see `[object Object]` as the name of the breakpoint.
 
 
 ## Tips and tricks
