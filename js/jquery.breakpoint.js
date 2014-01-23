@@ -115,7 +115,7 @@
 	 */
 
 	// (De)activate breakpoint debugging.
-	$.breakpoint.debug = true;
+	$.breakpoint.debug = false;
 
 	// Console logging wrapper.
 	function debug () {
