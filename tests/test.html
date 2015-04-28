@@ -3,6 +3,36 @@
 <head>
 	<meta charset="utf-8" />
 	<title>breakpoint demo</title>
+	<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+	<script src="../js/jquery.breakpoint.js"></script>
+	<script>
+		$(function () {
+			var b = {
+				condition: function () {
+					return window.matchMedia('only screen and (min-width:500px)').matches;
+				},
+				first_enter: function () {
+					// Code will run the first time condition() is true.
+					// Here, you might create elements to use in
+					// your enter and exit methods.
+					console.info('First enter breakpoint');
+				},
+				enter: function () {
+					// Code will run whenever condition() becomes true.
+					console.info('Enter breakpoint');
+				},
+				exit: function () {
+					// Code will run whenever condition() becomes false
+					// (if it was previously true).
+					// This is where you revert the things you do in the
+					// enter method.
+					console.info('Exit breakpoint');
+				}
+			};
+
+			$.breakpoint(b);
+		});
+	</script>
 </head>
 <body>
 </body>

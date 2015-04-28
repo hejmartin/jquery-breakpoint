@@ -3,12 +3,16 @@
 
 	var breakpoints = [];
 
-	// Adds a breakpoint object with the following properties:
-	//
-	// condition   = a function returning a boolean for whether this breakpoint should be active or not.
-	// first_enter = a function which will execute the FIRST TIME condition() is true.
-	// enter       = a function which will execute everytime condition() turns from false to true.
-	// exit        = a function which will execute everytime condition() turns from true to false.
+	/**
+	 * Add a breakpoint object
+	 *
+	 * @param  {object}   breakpoint - Breakpoint to add
+	 * @param  {function} breakpoint.condition - Return a boolean for whether this breakpoint should be active or not
+	 * @param  {function} breakpoint.first_enter - Will execute the FIRST TIME condition() is true.
+	 * @param  {function} breakpoint.enter - Will execute everytime condition() turns from false to true.
+	 * @param  {function} breakpoint.exit - Will execute everytime condition() turns from true to false.
+	 * @param  {object}   [options]
+	 */
 	$.breakpoint = function (breakpoint, options) {
 
 		options = $.extend(true, {}, $.breakpoint.defaults, options);
@@ -29,7 +33,22 @@
 	// Array of all added breakpoints.
 	$.breakpoint.breakpoints = breakpoints;
 
-	// Allow checking a single breakpoint from outside of plugin.
+	/**
+	 * Remove a breakpoint
+	 * @param  {object} breakpoint - Breakpoint object as described in $.breakpoint
+	 */
+	$.breakpoint.remove = function (breakpoint) {
+		var index;
+
+		while ((index = $.inArray(breakpoint, $.breakpoint.breakpoints)) !== -1) {
+			$.breakpoint.breakpoints.splice(index, 1);
+		}
+	};
+
+	/**
+	 * Remove a breakpoint
+	 * @param  {object} breakpoint - Breakpoint object as described in $.breakpoint
+	 */
 	$.breakpoint.check = function (breakpoint) {
 		checkSingleBreakpoint(breakpoint);
 	};

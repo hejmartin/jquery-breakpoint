@@ -1,0 +1,26 @@
+{
+  "name": "jquery.breakpoint",
+  "version": "1.2.0",
+  "description": "A simple way to use media queries in your jQuery javascripts!",
+  "main": "gruntfile.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/martinmartinmartin/breakpoint.git"
+  },
+  "author": "Martin Jansson martin@marja.se",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/martinmartinmartin/breakpoint/issues"
+  },
+  "homepage": "https://github.com/martinmartinmartin/breakpoint",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-uglify": "^0.9.1"
+  }
+}
