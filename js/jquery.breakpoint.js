@@ -58,6 +58,7 @@
 
 	function checkActiveBreakpoint(breakpoint) {
 		if (!breakpoint.condition()) {
+			debug('Exiting breakpoint: ' + breakpoint);
 
 			// We have left this breakpoint.
 			if (typeof breakpoint.exit === 'function') {
@@ -75,6 +76,8 @@
 
 			// We have entered this breakpoint.
 			if (typeof breakpoint.first_enter === 'function') {
+				debug('Entering breakpoint for the first time: ' + breakpoint);
+
 				try {
 					breakpoint.first_enter.apply(breakpoint);
 				} catch (e) {}
@@ -84,6 +87,7 @@
 			}
 
 			if (typeof breakpoint.enter === 'function') {
+				debug('Entering breakpoint: ' + breakpoint);
 				try {
 					breakpoint.enter.apply(breakpoint);
 				} catch (e) {}
@@ -123,6 +127,20 @@
 		$.each(inactive_breakpoints, function (index, breakpoint) {
 			checkInactiveBreakpoint(breakpoint);
 		});
+	}
+
+	/**
+	 * Breakpoint debugging
+	 */
+
+	// (De)activate breakpoint debugging.
+	$.breakpoint.debug = false;
+
+	// Console logging wrapper.
+	function debug () {
+		if ($.breakpoint.debug && console && console.info) {
+			console.info.apply(console, arguments);
+		}
 	}
 
 }(jQuery));
